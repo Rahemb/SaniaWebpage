@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine</title>
+  <style>
+    body {
+      background-image: url('../bilder/lilla bakgrunn.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #333;
+    }
+
+    #question {
+      font-size: 3em;
+      font-weight: bold;
+      color: #ec1882;
+      margin-top: 5vh;
+    }
+
+    #options button {
+      font-size: 2.5em;
+      padding: 10px 20px;
+      margin: 10px;
+      color: #fff;
+      background-color: #ec1882;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #options button:hover {
+      background-color: #7a0ea5;
+    }
+  </style>
+</head>
+<body>
+<div id="question">Hei Sania ❤️ Vil du bli min Valentine? 🌹</div>
+<div id="options">
+  <button onclick="answer('yes')">OMG JAAA </button>
+  <button onclick="answer('no')">EW NEI</button>
+</div>
+<div id="message"></div>
+<script>
+  function answer(choice) {
+    var messageElement = document.getElementById('message');
+    if (choice === 'yes') {
+      messageElement.innerHTML = "Yaaay! Vi ses 14. februar 🤭 Gleder meg! ❤️";
+    } else {
+      messageElement.innerHTML = "WOOOOW! Jeg brukte så lang tid på denne, prøv igjen!";
+      setTimeout(() => messageElement.innerHTML = "", 5000);
+    }
+  }
+</script>
+</body>
+</html>
