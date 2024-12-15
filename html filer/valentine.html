@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Valentine</title>
   <style>
+
+    /* svaret som kommer ut etter valg*/
+    #message {
+      font-size: 3em; /* Gjør skriften større */
+      font-weight: bold; /* Valgfritt, gjør teksten fetere */
+      color: #ec1882; /* Endre farge om ønskelig */
+      margin-top: 20px; /* Legg til litt avstand over */
+    }
     body {
       background-image: url('../bilder/lilla bakgrunn.png');
       background-size: cover;
@@ -50,6 +58,7 @@
     var messageElement = document.getElementById('message');
     if (choice === 'yes') {
       messageElement.innerHTML = "Yaaay! Vi ses 14. februar 🤭 Gleder meg! ❤️";
+
     } else {
       messageElement.innerHTML = "WOOOOW! Jeg brukte så lang tid på denne, prøv igjen!";
       setTimeout(() => messageElement.innerHTML = "", 5000);
