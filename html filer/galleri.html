@@ -4,17 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galleri</title>
-  <link rel="stylesheet" href="../css/css.css">
+  <style>
+    body {
+      background-image: url('../bilder/Svart bakgunn.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #a11ccc;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Lightbox-stil */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+  </style>
 </head>
-<body class="galleri-page" style="background-image: url('../bilder/Svart bakgunn.png');">
+<body>
 <h1>Vårt Galleri</h1>
 <div class="gallery">
-  <!-- Legg til bilder -->
-  <img src="../bilder/bilde1.jpg" alt="Bilde 1">
-  <img src="../bilder/bilde2.jpg" alt="Bilde 2">
-  <img src="../bilder/bilde3.jpg" alt="Bilde 3">
-  <!-- Legg til flere bilder her -->
+  <!-- Bilder med klikkbar funksjonalitet -->
+  <img src="../bilder/fellesbilde1.HEIC" alt="Bilde 1" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde2.heic" alt="Bilde 2" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde3.HEIC" alt="Bilde 3" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde4.JPG" alt="Bilde 4" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde5.png" alt="Bilde 5" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde6.jpg" alt="Bilde 6" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde7.png" alt="Bilde 7" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde8.png" alt="Bilde 8" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde9.png" alt="Bilde 9" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde10.png" alt="Bilde 10" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde11.png" alt="Bilde 11" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde12.png" alt="Bilde 12" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde13.png" alt="Bilde 13" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde14.png" alt="Bilde 14" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde15.png" alt="Bilde 15" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde16.png" alt="Bilde 16" onclick="openLightbox(this.src)">
+  <img src="../bilder/fellesbilde17.png" alt="Bilde 17" onclick="openLightbox(this.src)">
 </div>
-<script src="../js/js.js"></script>
+
+<!-- Lightbox-div -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full-size bilde">
+</div>
+
+<script>
+  // Åpne lightbox og vis bildet
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src; // Sett kilden til bildet som ble klikket på
+    lightbox.classList.add('active'); // Vis lightbox
+  }
+
+  // Lukk lightbox når du klikker på bakgrunnen
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active'); // Skjul lightbox
+  }
+</script>
 </body>
 </html>

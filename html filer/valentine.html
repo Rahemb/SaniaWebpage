@@ -8,7 +8,7 @@
 
     /* svaret som kommer ut etter valg*/
     #message {
-      font-size: 3em; /* Gjør skriften større */
+      font-size: 2.5em; /* Gjør skriften større */
       font-weight: bold; /* Valgfritt, gjør teksten fetere */
       color: #ec1882; /* Endre farge om ønskelig */
       margin-top: 20px; /* Legg til litt avstand over */
@@ -57,10 +57,10 @@
   function answer(choice) {
     var messageElement = document.getElementById('message');
     if (choice === 'yes') {
-      messageElement.innerHTML = "Yaaay! Vi ses 14. februar 🤭 Gleder meg! ❤️";
+      messageElement.innerHTML = "Feeerdy! Vi ses 14. februar❤️ Gleder meg! ❤️";
 
     } else {
-      messageElement.innerHTML = "WOOOOW! Jeg brukte så lang tid på denne, prøv igjen!";
+      messageElement.innerHTML = "WOOOOW! Jeg brukte ikke så lang tid på denne netsiden for at du skal si nei! prøv igjen!";
       setTimeout(() => messageElement.innerHTML = "", 5000);
     }
   }
